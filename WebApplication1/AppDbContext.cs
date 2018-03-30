@@ -7,6 +7,6 @@ namespace WebApplication1
         public AppDbContext(DbContextOptions options) : base(options)
         {
         }
-
+        public DbSet<Customer> Customers { get; set; }
     }
 }
