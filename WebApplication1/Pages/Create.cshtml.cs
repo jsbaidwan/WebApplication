@@ -9,6 +9,10 @@ namespace WebApplication1.Pages
 {
     public class CreateModel : PageModel
     {
+        private readonly AppDbContext _db;
+
+        public Customer Customer { get; set; }
+
         public void OnGet()
         {
 
