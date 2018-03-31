@@ -11,6 +11,11 @@ namespace WebApplication1.Pages
     {
         private readonly AppDbContext _db;
 
+        public CreateModel(AppDbContext db)
+        {
+            _db = db;
+        }
+
         public Customer Customer { get; set; }
 
         public void OnGet()
