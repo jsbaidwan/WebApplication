@@ -18,9 +18,8 @@ namespace WebApplication1.Pages
 
         public Customer Customer { get; set; }
 
-        public void OnGet()
+        public async Task<IActionResult> OnPostAsync()
         {
-
         }
     }
 }
