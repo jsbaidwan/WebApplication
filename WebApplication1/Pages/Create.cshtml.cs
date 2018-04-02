@@ -20,6 +20,10 @@ namespace WebApplication1.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
         }
     }
 }
