@@ -28,7 +28,7 @@ namespace WebApplication1.Pages
             _db.Customers.Add(Customer);
             // This is means don't wait
             await _db.SaveChangesAsync();
-            return RedirectToPage("/");
+            return RedirectToPage("/Index");
         }
     }
 }
