@@ -13,6 +13,7 @@
             </tr>
         </thead>
         <tbody>
+            <!--atTheRate symbol means you may write C# within HTML-->
             @foreach (var customer in Model.Customers)
             {
                 <tr>
@@ -20,7 +21,7 @@
                     <th>@customer.Name</th>
                     <th>Link to edit, delete button</th>
                 </tr>
-            }
+             }
         </tbody>
     </table>
 </form>
