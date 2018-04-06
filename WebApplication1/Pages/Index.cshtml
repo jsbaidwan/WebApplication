@@ -12,5 +12,15 @@
                 <th>Name</th>
             </tr>
         </thead>
+        <tbody>
+            @foreach (var customer in Model.Customers)
+            {
+                <tr>
+                    <th>@customer.Id</th>
+                    <th>@customer.Name</th>
+                    <th>Link to edit, delete button</th>
+                </tr>
+            }
+        </tbody>
     </table>
 </form>
