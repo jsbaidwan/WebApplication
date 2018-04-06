@@ -6,7 +6,7 @@ namespace WebApplication1
     {
         public int Id { get; set; }
 
-        [Required, StringLength(10)]
+        [Required, StringLength(50)]
         public string Name { get; set; }
     }
 }
