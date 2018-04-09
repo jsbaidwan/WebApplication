@@ -21,5 +21,20 @@ namespace WebApplication1.Pages
         {
             Customers = await _db.Customers.AsNoTracking().ToListAsync();
         }
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        {
+            // Get the cutomer from the database using ID
+            var customer = await _db.Customers.FindAsync(id);
+
+            if (customer != null)
+            {
+                //remove the select cutomer from database using id
+                _db.Customers.Remove(customer);
+                // save the changes done in In-Memory database 
+                await _db.SaveChangesAsync();
+            }
+            // After the changes it will redirect to same pages.
+            return RedirectToPage();
+        }
     }
 }
