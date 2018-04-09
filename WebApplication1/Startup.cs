@@ -29,7 +29,7 @@ namespace WebApplication1
         {
             // InMemory Database with custom name AppDbContext
             services.AddDbContext<AppDbContext>(options =>
-                //DatabaseName is name
+                //InMemoryDatabaseName is name
                 options.UseInMemoryDatabase("name"));
             services.AddMvc();
         }

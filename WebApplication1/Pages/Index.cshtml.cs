@@ -10,6 +10,7 @@ namespace WebApplication1.Pages
 {
     public class IndexModel : PageModel
     {
+        //This variable will fetch data from database 
         private readonly AppDbContext _db;
 
         public IndexModel(AppDbContext db)   {  _db = db;  }
