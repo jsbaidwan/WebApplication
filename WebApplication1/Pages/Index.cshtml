@@ -18,11 +18,17 @@
             @foreach (var customer in Model.Customers)
             {
                 <tr>
-                    <th>@customer.Id</th>
-                    <th>@customer.Name</th>
-                    <th>Link to edit, delete button</th>
+                    <td>@customer.Id</td>
+                    <td>@customer.Name</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@customer.Id">Edit</a>
+                        <button type="submit" asp-page-handler="delete"
+                                asp-route-id="@customer.Id">Delete</button>
+                    
+                    </td>
                 </tr>
              }
         </tbody>
     </table>
+    <a asp-page="./Create">Create</a>
 </form>
