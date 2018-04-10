@@ -9,9 +9,10 @@ namespace WebApplication1.Pages
 {
     public class EditModel : PageModel
     {
-        public void OnGet()
-        {
+        private readonly AppDbContext _db;
 
-        }
+        public EditModel(AppDbContext db) { _db = db; }
+
+        public Customer Customer { get; set; }
     }
 }
