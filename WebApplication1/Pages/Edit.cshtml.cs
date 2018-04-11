@@ -19,6 +19,10 @@ namespace WebApplication1.Pages
         public async Task<IActionResult> OnGetAsync(int id)
         {
             Customer = await _db.Customers.FindAsync(id);
+            if (Customer == null)
+            {
+                return RedirectToPage("/Index");
+            }
             return Page();
         }
     }
