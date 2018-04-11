@@ -15,5 +15,11 @@ namespace WebApplication1.Pages
 
         [BindProperty]
         public Customer Customer { get; set; }
+
+        public async Task<IActionResult> OnGetAsync(int id)
+        {
+            Customer = await _db.Customers.FindAsync(id);
+            return Page();
+        }
     }
 }
