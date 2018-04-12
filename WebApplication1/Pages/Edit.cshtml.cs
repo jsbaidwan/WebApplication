@@ -25,5 +25,9 @@ namespace WebApplication1.Pages
             }
             return Page();
         }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            return RedirectToPage("/Index");
+        }
     }
 }
