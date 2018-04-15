@@ -35,6 +35,15 @@ namespace WebApplication1.Pages
 
             _db.Attach(Customer).State = EntityState.Modified;
 
+            try
+            {
+                await _db.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                throw new Exception($"Customer {Customer.Id} not found!", e);
+            }
+
             return RedirectToPage("/Index");
         }
     }
