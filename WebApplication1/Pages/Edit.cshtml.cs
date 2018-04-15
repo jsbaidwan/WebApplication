@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1.Pages
 {
@@ -31,6 +32,9 @@ namespace WebApplication1.Pages
             {
                 return Page();
             }
+
+            _db.Attach(Customer).State = EntityState.Modified;
+
             return RedirectToPage("/Index");
         }
     }
