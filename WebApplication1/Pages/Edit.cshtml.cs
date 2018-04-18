@@ -28,6 +28,7 @@ namespace WebApplication1.Pages
         }
         public async Task<IActionResult> OnPostAsync()
         {
+            // Return to the same page if modelstate is not valid
             if (!ModelState.IsValid)
             {
                 return Page();

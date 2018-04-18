@@ -21,6 +21,8 @@ namespace WebApplication1.Pages
         {
             Customers = await _db.Customers.AsNoTracking().ToListAsync();
         }
+
+        // The onPost"Delete"Async is the same name as asp-page-handler="delete" at razor page
         public async Task<IActionResult> OnPostDeleteAsync(int id)
         {
             // Get the cutomer from the database using ID
