@@ -16,6 +16,7 @@ namespace WebApplication1.Pages
 
         // By default the model binding logic maps the form field names and the property names.
         [BindProperty]
+        // Customer with Auto-Implemented Properties
         public Customer Customer { get; set; }
         // In an asynchronous process, the application can continue with other work 
         // that doesn't depend on the web resource until the potentially blocking task finishes.
