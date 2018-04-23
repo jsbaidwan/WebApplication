@@ -16,6 +16,10 @@ namespace WebApplication1.Pages
             _db = db;
         }
 
+        // Message of string type and it will part of PageModel,
+        // which is kind of ViewModel
+        public string Message { get; set; }
+
         [BindProperty]
         public Customer Customer { get; set; }
 
