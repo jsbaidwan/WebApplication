@@ -16,8 +16,12 @@ namespace WebApplication1.Pages
             _db = db;
         }
 
+        // Stores temporary data which can be used in the subsequent request. 
+        // TempData will be cleared out after the completion of a subsequent request.
+        // TempData can be used to store only one time messages like error messages, validation messages.
+        [TempData]
         // Message of string type and it will part of PageModel,
-        // which is kind of ViewModel
+        // which is kind of like ViewModel
         public string Message { get; set; }
 
         [BindProperty]
