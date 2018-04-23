@@ -36,6 +36,9 @@ namespace WebApplication1.Pages
             _db.Customers.Add(Customer);
             // This is means don't wait
             await _db.SaveChangesAsync();
+            // Message display text and Cutomer.Name from the form
+            // It is independent of DB
+            Message = $"Customer {Customer.Name} added!";
             return RedirectToPage("/Index");
         }
     }
