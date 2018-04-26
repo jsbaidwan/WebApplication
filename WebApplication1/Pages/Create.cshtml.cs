@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 
 namespace WebApplication1.Pages
 {
@@ -11,9 +12,12 @@ namespace WebApplication1.Pages
     {
         private readonly AppDbContext _db;
 
-        public CreateModel(AppDbContext db)
+        private ILogger<CreateModel> Log;
+
+        public CreateModel(AppDbContext db, ILogger<CreateModel> log)
         {
             _db = db;
+            Log = log;
         }
 
         // Stores temporary data which can be used in the subsequent request. 
@@ -38,7 +42,9 @@ namespace WebApplication1.Pages
             await _db.SaveChangesAsync();
             // Message display text and Cutomer.Name from the form
             // It is independent of DB
-            Message = $"Customer {Customer.Name} added!";
+            var msg = $"Customer {Customer.Name} added!";
+            Message = msg;
+            Log.LogCritical(msg);
             return RedirectToPage("/Index");
         }
     }
